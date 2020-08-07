@@ -1,0 +1,113 @@
+<header class="header">
+    <div class="header-wrapper">
+        <div class="container">
+            <div class="header-inner">
+
+                <div class="header-logo">
+                    <a href={{ asset("home") }}>
+                        <img src="{{ asset("assets/img/azzaroots_log.png") }}" alt="Logo">
+                        <span></span>
+                    </a>
+                </div><!-- /.header-logo -->
+
+                <div class="header-content">
+
+                    <div class="header-top">
+                        <div class="header-search">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                        </div><!-- /.header-search -->
+                        <ul class="header-nav-social social-links nav nav-pills">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        </ul><!-- /.header-nav-social -->
+                        <ul class="header-nav-secondary nav nav-pills">
+                            <li><a href={#{ path('preregistration') }#}>First Sign In</a></li>
+                            {% if not app.user %}
+                            <li>
+                                <a href="{#{ path('securitylogin') }#}">Connexion <i class="fa fa-chevron-down"></i></a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="{#{ path('securitylogout') }#}">Deconnexion <i class="fa fa-chevron-down"></i></a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div><!-- /.header-top -->
+
+                    <div class="header-bottom">
+                        <div class="header-action">
+                            <a href="#" class="header-action-inner" title="Add Listing"
+                               data-toggle="tooltip" data-placement="bottom">
+                                <i class="fa fa-plus"></i>
+                            </a><!-- /.header-action-inner -->
+                        </div><!-- /.header-action -->
+                        <ul class="header-nav-primary nav nav-pills collapse navbar-collapse">
+                            <li>
+                                <a href="{{ asset("/") }}">Home <i class="fa fa-chevron-down"></i></a>
+                                <!-- sub menu <ul li> -->
+                            </li>
+                            <li>
+                                <a href="#">Partnership</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Profile Edit</a></li>
+                                    <li><a href="{#{ path('securitylogin') }#}">Authentication Form</a></li>
+                                    <li><a href="{#{ path('security_signin') }#}">Registration Form</a></li>
+                                    <li><a href="#">Change Password Form</a></li>
+                                </ul>
+                            </li>
+                            <li class="active">
+                                <a href="{#{ asset("/service") }#}">Activities <i class="fa fa-chevron-down"></i></a>
+                                <ul class="sub-menu">
+                                    <li><a href="{#{ asset("/service") }#}">List of Services</a></li>
+                                    <li><a href="{#{ asset("/details_service/{id}") }#}">Details of service (by id)</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-mega-menu ">
+                                <a href="#">Comments and News <i class="fa fa-chevron-down"></i></a>
+                                <ul class="mega-menu">
+                                    <li>
+                                        <a href="#">News</a>
+                                        <!-- sub menu <ul li> -->
+                                    </li>
+                                    <li>
+                                        <a href="#">Partnership</a>
+                                        <!-- sub menu <ul li> -->
+                                    </li>
+
+                                    <li class="hidden-xs">
+                                        <div class="special">
+                                            <a href="{#{ path('security_signin') }#}">Sign Up Now</a>
+                                        </div><!-- /.special-->
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Admin <i class="fa fa-chevron-down"></i></a>
+                                <ul class="sub-menu">
+                                    <li><a href="{#{ path('newpartner') }#}">New partner</a></li>
+                                    <li><a href="{#{ path('newcustomer') }#}">New customer</a></li>
+                                    <li><a href="#">New Event</a></li>
+                                    <li><a href="#">New Images</a></li>
+                                    <li><a href="#">Delete customer</a></li>
+                                    <li><a href="#">Delete partner</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="mailto:alexandre.harelimana@azzaroots.com">Contacts <i class="fa fa-chevron-down"></i></a>
+                            </li>
+                        </ul>
+                        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                                data-target=".header-nav-primary">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div><!-- /.header-bottom -->
+                </div><!-- /.header-content -->
+            </div><!-- /.header-inner -->
+        </div><!-- /.container -->
+    </div><!-- /.header-wrapper -->
+</header><!-- /.header -->

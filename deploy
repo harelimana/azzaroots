@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av ./ azzarootjh-eie509ssh@ssh.cluster028.hosting.ovh.net:~/azzaroots --include=public/assets --include=public/bundles --include=vendor --exclude-from=.gitignore --exclude=".*"

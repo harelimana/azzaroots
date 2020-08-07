@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+                {% block container %}
+                    <div class="container">
+                        {% block bandeau %}
+                            <h2>Images</h2>
+                            <p><i>Administrer les images. Créer, éditer et supprimer les images.</i></p>
+                            <a class="btn btn-primary" href="{{ path('admin.image.create') }}"><i
+                                        class="fa fa-plus whiteText"></i> Ajouter une image</a>
+                        {% endblock %}
+
+                        {% block content %}
+                            {{ form_start(admin_image) }}
+                            <div class="row">
+                                <div class="col-md-4">{{ form_row(admin_image.image) }}</div>
+                                <div class="col-md-4">{{ form_row(admin_image.name) }}</div>
+                                <div class="col-md-4">{{ form_row(admin_image.filename) }}</div>
+                                <div class="col-md-4">{{ form_row(admin_image.path) }}</div>
+                                <div class="datetime-widget">{{ form_row(admin_image.update_at) }}</div>
+
+                            </div>
+                            <div><button type="submit" class="btn btn-success btn-label">
+                                    {%  if editmode %}
+                                        Set Modifications
+                                    {% else %}
+                                        Submit
+                                    {% endif %}
+                                </button></div>
+                        {% endblock %}
+                        {{ form_end(admin_image) }}
+                    </div>
+                {% endblock %}
+
+{% block javascripts %}
+{% endblock %}

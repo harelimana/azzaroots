@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} - Welcome to Azzaroots - {% endblock %}
+{% block body %}
+    <div class="page-wrapper">
+        {% block nav %}{% include 'common/header.html.twig' %}{% endblock %}
+        <div class="main">
+            <!-- Slider -->
+            {% block slider %}{% include 'common/slider.html.twig' %}{% endblock %}
+            <!-- END - Slider -->
+            <div class="#">
+                {% block container %}
+                    {% include 'front_azza/activities/activities.html.twig' %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
